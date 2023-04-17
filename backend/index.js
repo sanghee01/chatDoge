@@ -1,4 +1,5 @@
-const apiKey = "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";
+const config = require("./config.js");
+const apiKey = config.API_KEY;
 const serverless = require("serverless-http");
 const { Configuration, OpenAIApi } = require("openai");
 const express = require("express");
@@ -8,6 +9,7 @@ const app = express();
 const configuration = new Configuration({
   apiKey: apiKey,
 });
+
 const openai = new OpenAIApi(configuration);
 
 //CORS 이슈 해결
